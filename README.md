@@ -102,6 +102,14 @@ pipeline{
 
 ![finding resources by name](https://user-images.githubusercontent.com/64476159/164773110-69f744b1-892d-4020-81d4-70594f6ef255.png)
 
+## Edit in the Source Code 
+
+* added additional button to redirect it to value by ID page.
+* 
+![image](https://user-images.githubusercontent.com/64476159/164794193-07df0ea1-397f-4117-a46a-ae49e1943691.png)
+
+
+
 ## After Edit - Running Jenkins Job to deploy the new Image 
 
 ![Jenkins helm sucess](https://user-images.githubusercontent.com/64476159/164773195-07388801-08ac-4f09-9c2d-9082fdb85ebc.png)
