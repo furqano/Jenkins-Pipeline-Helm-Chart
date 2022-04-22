@@ -32,7 +32,7 @@ Created Credentials for DockerHub to push the images to repositories.
 pipeline{
     agent any
     environment { 
-        registry = "furqano/restapi-app" 
+        registry = "furqano/test" 
         registryCredential = 'dockhub' 
         dockerImage = '' 
     }
