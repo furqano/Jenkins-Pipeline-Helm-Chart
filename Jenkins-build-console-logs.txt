@@ -1,0 +1,290 @@
+Started by user admin
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/test
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Clone Repo)
+[Pipeline] node
+Still waiting to schedule task
+‘Docker’ is offline
+Running on Docker in /root/restapi-app/workspace/test
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+Fetching changes from the remote Git repository
+ > git rev-parse --resolve-git-dir /root/restapi-app/workspace/test/.git # timeout=10
+ > git config remote.origin.url https://github.com/furqano/Java-Rest-API-2-Server.git # timeout=10
+Fetching upstream changes from https://github.com/furqano/Java-Rest-API-2-Server.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+ > git fetch --tags --force --progress -- https://github.com/furqano/Java-Rest-API-2-Server.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+Seen branch in repository origin/main
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 7f2405fe94626db43f9b1e3f3fa00c08a591fd03 (origin/main)
+Commit message: "Add files via upload"
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7f2405fe94626db43f9b1e3f3fa00c08a591fd03 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D main # timeout=10
+ > git checkout -b main 7f2405fe94626db43f9b1e3f3fa00c08a591fd03 # timeout=10
+ > git rev-list --no-walk aa2af7290a455c2a05d9199dae77c159e25f3692 # timeout=10
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build app)
+[Pipeline] node
+Running on Docker in /root/restapi-app/workspace/test
+[Pipeline] {
+[Pipeline] withMaven
+[withMaven] Options: []
+[withMaven] Available options: 
+[withMaven] using JDK installation provided by the build agent
+[withMaven] using Maven installation 'maven'
+[Pipeline] {
+[Pipeline] sh
++ mvn package
+----- withMaven Wrapper script -----
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="/root/restapi-app/workspace/test@tmp/withMavende4d36df/pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="/root/restapi-app/workspace/test@tmp/withMavende4d36df" 
+Apache Maven 3.8.5 (3599d3414f046de2324203b78ddcf9b5e4388aa0)
+Maven home: /root/restapi-app/tools/hudson.tasks.Maven_MavenInstallation/maven
+Java version: 17.0.3, vendor: Oracle Corporation, runtime: /usr/java/jdk-17.0.3
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "5.10.106-102.504.amzn2.x86_64", arch: "amd64", family: "unix"
+[INFO] [jenkins-event-spy] Generate /root/restapi-app/workspace/test@tmp/withMavende4d36df/maven-spy-20220422-181044-1972374512174045510424.log.tmp ...
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.task1:server2api >------------------------
+[INFO] Building server2api 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ server2api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 4 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ server2api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ server2api ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /root/restapi-app/workspace/test/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ server2api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ server2api ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.task1.server2api.Server2apiApplicationTests
+18:10:50.444 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:10:50.460 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:10:50.525 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.task1.server2api.Server2apiApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+18:10:50.550 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.task1.server2api.Server2apiApplicationTests], using SpringBootContextLoader
+18:10:50.559 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.task1.server2api.Server2apiApplicationTests]: class path resource [com/task1/server2api/Server2apiApplicationTests-context.xml] does not exist
+18:10:50.559 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.task1.server2api.Server2apiApplicationTests]: class path resource [com/task1/server2api/Server2apiApplicationTestsContext.groovy] does not exist
+18:10:50.560 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.task1.server2api.Server2apiApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:10:50.560 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.task1.server2api.Server2apiApplicationTests]: Server2apiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:10:50.658 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.task1.server2api.Server2apiApplicationTests]
+18:10:50.771 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/root/restapi-app/workspace/test/target/classes/com/task1/server2api/Server2apiApplication.class]
+18:10:50.773 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.task1.server2api.Server2apiApplication for test class com.task1.server2api.Server2apiApplicationTests
+18:10:50.968 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.task1.server2api.Server2apiApplicationTests]: using defaults.
+18:10:50.972 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+18:10:51.013 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1115ec15, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@82ea68c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@59e505b2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3af0a9da, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@43b9fd5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@79dc5318, org.springframework.test.context.transaction.TransactionalTestExecutionListener@8e50104, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@37e4d7bb, org.springframework.test.context.event.EventPublishingTestExecutionListener@6f7923a5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@74a6f9c1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@54eb2b70, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@45a37759, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@63611043, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@20ca951f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2d778add]
+18:10:51.021 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@3f57bcad testClass = Server2apiApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1e8b7643 testClass = Server2apiApplicationTests, locations = '{}', classes = '{class com.task1.server2api.Server2apiApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1eb5174b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5fd4f8f5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@649bec2e, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@49912c99, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@10feca44, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@26aa12dd], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.6)
+
+2022-04-22 18:10:51.668  INFO 26304 --- [           main] c.t.s.Server2apiApplicationTests         : Starting Server2apiApplicationTests using Java 17.0.3 on ip-172-31-11-206.ap-south-1.compute.internal with PID 26304 (started by root in /root/restapi-app/workspace/test)
+2022-04-22 18:10:51.672  INFO 26304 --- [           main] c.t.s.Server2apiApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2022-04-22 18:10:52.997  INFO 26304 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-22 18:10:53.092  INFO 26304 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 1 MongoDB repository interfaces.
+2022-04-22 18:10:54.153  INFO 26304 --- [           main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-22 18:10:54.283  INFO 26304 --- [localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:188) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:152) ~[mongodb-driver-core-4.4.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.4.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.4.2.jar:na]
+	... 4 common frames omitted
+
+2022-04-22 18:10:56.816  INFO 26304 --- [           main] c.t.s.Server2apiApplicationTests         : Started Server2apiApplicationTests in 5.723 seconds (JVM running for 8.012)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.426 s - in com.task1.server2api.Server2apiApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ server2api ---
+[INFO] Building jar: /root/restapi-app/workspace/test/target/server2api-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.6.6:repackage (repackage) @ server2api ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.245 s
+[INFO] Finished at: 2022-04-22T18:10:59Z
+[INFO] ------------------------------------------------------------------------
+[INFO] [jenkins-event-spy] Generated /root/restapi-app/workspace/test@tmp/withMavende4d36df/maven-spy-20220422-181044-1972374512174045510424.log
+[Pipeline] }
+[withMaven] artifactsPublisher - Archive artifact pom.xml under com/task1/server2api/0.0.1-SNAPSHOT/server2api-0.0.1-SNAPSHOT.pom
+[withMaven] artifactsPublisher - Archive artifact target/server2api-0.0.1-SNAPSHOT.jar under com/task1/server2api/0.0.1-SNAPSHOT/server2api-0.0.1-SNAPSHOT.jar
+[withMaven] junitPublisher - Archive test results for Maven artifact com.task1:server2api:jar:0.0.1-SNAPSHOT generated by maven-surefire-plugin:test (default-test): target/surefire-reports/*.xml
+[withMaven] junitPublisher - Jenkins JUnit Attachments Plugin not found, can't publish test attachments.Recording test results
+[withMaven] Jenkins Task Scanner Plugin not found, don't display results of source code scanning for 'TODO' and 'FIXME' in pipeline screen.
+[withMaven] Publishers: Pipeline Graph Publisher: 3 ms, Generated Artifacts Publisher: 6154 ms, Junit Publisher: 337 ms
+[Pipeline] // withMaven
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Image)
+[Pipeline] node
+Running on Docker in /root/restapi-app/workspace/test
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker build -t furqano/test .
+Sending build context to Docker daemon  27.67MB
+Step 1/5 : FROM openjdk:18-jdk-alpine
+ ---> c89120dcca4c
+Step 2/5 : COPY ./target/*.jar /app.jar
+ ---> 19a64a7b5625
+Step 3/5 : EXPOSE 6039
+ ---> Running in f402795ae23a
+Removing intermediate container f402795ae23a
+ ---> ed209c16a9a4
+Step 4/5 : EXPOSE 27017
+ ---> Running in 2bf1836c5d73
+Removing intermediate container 2bf1836c5d73
+ ---> 045610b7f521
+Step 5/5 : ENTRYPOINT ["java","-jar","/app.jar"]
+ ---> Running in c143ca8de72c
+Removing intermediate container c143ca8de72c
+ ---> 4c9a8d9f6524
+Successfully built 4c9a8d9f6524
+Successfully tagged furqano/test:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy our image)
+[Pipeline] node
+Running on Docker in /root/restapi-app/workspace/test
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withDockerRegistry
+$ docker login -u furqano -p ******** https://registry.hub.docker.com
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/restapi-app/workspace/test@tmp/c182da8a-f6dc-4257-903d-1395b6b7590d/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker tag furqano/test registry.hub.docker.com/furqano/test:latest
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] sh
++ docker push registry.hub.docker.com/furqano/test:latest
+The push refers to repository [registry.hub.docker.com/furqano/test]
+0ebb6c324c97: Preparing
+f64df31005fa: Preparing
+4935b8115970: Preparing
+8d3ac3489996: Preparing
+f64df31005fa: Layer already exists
+4935b8115970: Layer already exists
+8d3ac3489996: Layer already exists
+0ebb6c324c97: Pushed
+latest: digest: sha256:89178be36948bb2554370843b8b3d8c4f9fce1091cc9375cfebf97e3d4bea717 size: 1163
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withDockerRegistry
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Helm deploy)
+[Pipeline] node
+Running on Helm in D:\Jenkins\workspace\test
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] bat
+
+D:\Jenkins\workspace\test>helm upgrade dep2 -n dep test 
+Release "dep2" has been upgraded. Happy Helming!
+NAME: dep2
+LAST DEPLOYED: Fri Apr 22 23:40:31 2022
+NAMESPACE: dep
+STATUS: deployed
+REVISION: 9
+TEST SUITE: None
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
