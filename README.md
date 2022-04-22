@@ -92,6 +92,12 @@ pipeline{
 ## Maven Build
 ![image](https://user-images.githubusercontent.com/64476159/164750838-8da30969-b523-42bc-98b3-2199ff4eff58.png)
 
+## Docker Build
+![image](https://user-images.githubusercontent.com/64476159/164790666-4af7a0c8-2492-4f96-a814-094e451affc3.png)
+
+## Docker Push
+![image](https://user-images.githubusercontent.com/64476159/164790751-ee863bb6-03f0-4a96-a3d7-609d014944e3.png)
+
 ## Before Edit - Previous Restapi-app Image
 
 ![finding resources by name](https://user-images.githubusercontent.com/64476159/164773110-69f744b1-892d-4020-81d4-70594f6ef255.png)
@@ -99,6 +105,8 @@ pipeline{
 ## After Edit - Running Jenkins Job to deploy the new Image 
 
 ![Jenkins helm sucess](https://user-images.githubusercontent.com/64476159/164773195-07388801-08ac-4f09-9c2d-9082fdb85ebc.png)
+![image](https://user-images.githubusercontent.com/64476159/164790799-d90d7f17-f7c3-4d61-bc3d-6ba1183047a9.png)
+
 
 ## New Updated Image deployed
 
