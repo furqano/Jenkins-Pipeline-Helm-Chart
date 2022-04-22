@@ -105,10 +105,8 @@ pipeline{
 ## Edit in the Source Code 
 
 * added additional button to redirect it to value by ID page.
-* 
+
 ![image](https://user-images.githubusercontent.com/64476159/164794193-07df0ea1-397f-4117-a46a-ae49e1943691.png)
-
-
 
 ## After Edit - Running Jenkins Job to deploy the new Image 
 
